@@ -2,17 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Ensures proper scaling on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Birthday Message</title>
   <style>
     body {
+      background-color: #ffe6f0;
       font-family: monospace;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;   /* full screen height */
+      padding: 10px;
+      box-sizing: border-box;
       text-align: center;
-      margin-top: 50px;
     }
-
     .message {
-      font-size: 20px;
-      display: inline-block;
+      background-color: #fff0f5;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;    /* fits nicely on mobile */
+      font-size: clamp(1rem, 3.5vw, 1.2rem); /* scales with screen */
+      line-height: 1.5;
+    }
+    .message img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -23,8 +42,7 @@
     <p>Since you have entered in my life, everything seems brighter.</p>
     <p>You are the man that I love and cannot imagine being without you.</p>
     <p>Happy Birthday💖!</p>
-    <br><br>
-    <img src="b.gif" alt="Celebration" width="150" height="150">
+    <img src="b.gif" alt="Celebration">
   </div>
 
 </body>
