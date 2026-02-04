@@ -2,44 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Ensures proper scaling on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Will You Be Mine?</title>
   <style>
     body {
       background-color: #ffe6f0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;   /* full screen height */
+      padding: 10px;
+      box-sizing: border-box;
       text-align: center;
-      padding: 40px;
     }
     .container {
       background-color: #fff0f5;
       border-radius: 20px;
-      padding: 30px;
+      padding: 20px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      display: inline-block;
+      width: 100%;
+      max-width: 420px;    /* fits nicely on mobile */
     }
     .header {
-      font-size: 20px;
+      font-size: 1.2rem;
       color: #ff69b4;
       margin-bottom: 20px;
     }
     .bear-img {
-      width: 200px;
+      max-width: 100%;     /* responsive image */
       height: auto;
       margin-bottom: 20px;
     }
     .question {
-      font-size: 28px;
+      font-size: clamp(1.4rem, 5vw, 1.8rem); /* scales with screen */
       font-weight: bold;
       color: #d6336c;
       margin-bottom: 30px;
     }
     .buttons button {
-      font-size: 18px;
-      padding: 10px 20px;
-      margin: 10px;
+      font-size: 1rem;
+      padding: 12px;
+      margin: 10px auto;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      width: 100%;         /* full width on mobile */
+      max-width: 250px;
+      display: block;
     }
     .yes {
       background-color: #90ee90;
@@ -49,6 +61,15 @@
       background-color: #ff9999;
       color: #000;
     }
+    @media (max-width: 480px) {
+      .question {
+        font-size: 1.2rem;
+      }
+      .buttons button {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -57,8 +78,7 @@
     <div class="question">PWEASE!!!!!!</div>
     <div class="buttons">
       <button class="yes">YES!!!!!!! 🥹</button>
-      <button class="no" onclick="window.location='Double Rejection.html' ">NO 😢</button>
-
+      <button class="no" onclick="window.location='Double Rejection.html'">NO 😢</button>
     </div>
   </div>
 </body>
