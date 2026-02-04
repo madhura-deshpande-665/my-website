@@ -26,18 +26,13 @@
       width: 100%;
       max-width: 420px;    /* fits nicely on mobile */
     }
-    .header {
-      font-size: 1.2rem;
-      color: #ff69b4;
-      margin-bottom: 20px;
-    }
     .bear-img {
       max-width: 100%;     /* responsive image */
       height: auto;
       margin-bottom: 20px;
     }
     .question {
-      font-size: clamp(1.4rem, 5vw, 1.8rem); /* scales with screen */
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
       font-weight: bold;
       color: #d6336c;
       margin-bottom: 30px;
@@ -61,15 +56,6 @@
       background-color: #ff9999;
       color: #000;
     }
-    @media (max-width: 480px) {
-      .question {
-        font-size: 1.2rem;
-      }
-      .buttons button {
-        font-size: 0.9rem;
-        padding: 10px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -77,8 +63,10 @@
     <img src="second.gif" alt="Cute Bear" class="bear-img">
     <div class="question">PWEASE!!!!!!</div>
     <div class="buttons">
-      <button class="yes" onclick="window.location.href='pages/message.html'">YES!!!!!!! 🥹</button>
-      <button class="no" onclick="window.location='Double Rejection.html'">NO 😢</button>
+      <!-- YES button -->
+      <button class="yes" onclick="window.location.href='message.html'">YES!!!!!!! 🥹</button>
+      <!-- NO button -->
+      <button class="no" onclick="window.location.href='Double Rejection.html'">NO 😢</button>
     </div>
   </div>
 </body>
