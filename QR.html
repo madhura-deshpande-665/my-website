@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code to Next Page</title>
+  <!-- Include QRCode.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    #qrcode {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>Scan this QR Code to open the next page</h2>
+  <div id="qrcode"></div>
+
+  <script>
+    // URL of the next page you want to open
+    var nextPageUrl = "firstpage.html"; 
+    // If hosted online, use full URL like: "https://yourdomain.com/firstpage.html"
+
+    // Generate QR code
+    new QRCode(document.getElementById("qrcode"), {
+      text: nextPageUrl,
+      width: 200,
+      height: 200
+    });
+  </script>
+</body>
+</html>

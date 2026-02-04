@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Click Animation</title>
+  <style>
+    body {
+      font-family: monospace;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    img {
+      width: 200px;
+      cursor: pointer;
+    }
+
+    .message {
+      font-size: 24px;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid black; /* cursor effect */
+      width: 0;
+      opacity: 0;
+    }
+
+    /* Typing animation */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100ch; } /* adjust to text length */
+    }
+
+    @keyframes blink {
+      from { border-color: transparent; }
+      to { border-color: black; }
+    }
+
+    .show {
+      opacity: 1;
+      animation: typing 4s steps(20, end) forwards,
+                 blink 0.7s step-end infinite alternate;
+    }
+  </style>
+</head>
+<body>
+    
+  <!-- Image -->
+  <img src="cute.gif" alt="Mailbox" id="mailbox"><br>
+ 
+
+  <!-- Hidden message -->
+
+  <br><div class="message" id="message"><br>Since you have entered in my life, 
+  everything seems brighter.<br> You are the man that I love and cannot imagine being without you.<br> Happy Birthday💖!
+  <br><br><br><br><img src="b.gif" alt="Mailbox" id="mailbox"></div>
+
+  <script>
+    const img = document.getElementById("mailbox");
+    const msg = document.getElementById("message");
+
+    img.addEventListener("click", () => {
+      msg.classList.add("show"); // trigger animation
+	  
+	  
+    });
+  </script>
+
+</body>
+  
+</html>
+
