@@ -2,45 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Ensures proper scaling on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seriously?! 😵</title>
   <style>
     body {
       background-color: #ffe6f0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;   /* full screen height */
+      padding: 10px;
+      box-sizing: border-box;
       text-align: center;
-      padding: 40px;
     }
     .container {
       background-color: #fff0f5;
       border-radius: 20px;
-      padding: 30px;
+      padding: 20px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      display: inline-block;
+      width: 100%;
+      max-width: 420px;    /* fits nicely on mobile */
     }
     .dramatic-img {
-      width: 220px;
+      max-width: 100%;     /* responsive image */
       height: auto;
       margin-bottom: 20px;
     }
     .headline {
-      font-size: 28px;
+      font-size: clamp(1.4rem, 5vw, 1.8rem); /* scales with screen */
       color: #d6336c;
       font-weight: bold;
       margin-bottom: 20px;
     }
     .subtext {
-      font-size: 18px;
+      font-size: clamp(1rem, 3.5vw, 1.1rem);
       color: #555;
       margin-bottom: 30px;
+      line-height: 1.4;
     }
     .final-button {
-      font-size: 18px;
-      padding: 10px 20px;
+      font-size: clamp(1rem, 3.5vw, 1.1rem);
+      padding: 12px;
       background-color: #ff9999;
       border: none;
       border-radius: 10px;
       cursor: pointer;
       color: #000;
+      width: 100%;         /* full width on mobile */
+      max-width: 250px;
+      display: block;
+      margin: 0 auto;
+    }
+    .final-button:hover {
+      background-color: #ff7f7f;
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+      .final-button {
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -49,7 +74,9 @@
     <img src="third.gif" alt="Dramatic Sprout" class="dramatic-img">
     <div class="headline">ARE YOU REALLY SURE?! 😵</div>
     <div class="subtext">Huhhhh You broke its tiny heart... twice.</div>
-    <button class="final-button" onclick="window.location.href='No Option.html'">Okay Fine... Go Back 😤</button>
+    <button class="final-button" onclick="window.location.href='No Option.html'">
+      Okay Fine... Go Back 😤
+    </button>
   </div>
 </body>
 </html>
